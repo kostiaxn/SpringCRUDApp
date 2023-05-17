@@ -1,7 +1,12 @@
 package ru.alishev.springcourse.models;
 
 
-import jakarta.validation.constraints.*;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 public class Person {
     private int id;
@@ -18,7 +23,7 @@ public class Person {
     private String email;
 
     // Страна, Город, Индекс (6 цифр)
-    @Pattern(regexp = "[A-Z]\\w+, [A-Z]\\w+, \\d{6}", message = "Your address should be in this format: County, City, Postal Code (6 digits")
+    @Pattern(regexp = "[A-Z]\\w+, [A-Z]\\w+, \\d{6}", message = "Your address should be in this format: County, City, Postal Code (6 digits)")
     private String address;
 
     public Person() {
